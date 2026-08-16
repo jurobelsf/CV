@@ -13,4 +13,4 @@ The CV is kept intentionally compact since I use it mainly as a practical docume
 - `cv.tex` — LaTeX source of the CV.
 - `cv.pdf` — Compiled version.
 
-## Notes
+
