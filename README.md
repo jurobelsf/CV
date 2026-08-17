@@ -2,7 +2,7 @@
 
 Source code for my CV, written in LaTeX.
 
-The visual design is inspired by the aesthetic of [Warp Records](https://warp.net/) — bold flat colors, grotesque typography, and the sleeve/catalogue look of their releases — reinterpreted into a clean, professional CV layout.
+The visual design is inspired by the legendary IDM and techno label [Warp Records](https://warp.net/), which I highly admire.
 
 The CV is kept intentionally compact since I use it mainly as a practical document for applications.
 
