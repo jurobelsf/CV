@@ -1,0 +1,228 @@
+\documentclass[9.5pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.3in,top=0.22in,bottom=0.18in]{geometry}
+
+\usepackage{fontspec}
+\setmainfont{IBMPlexSans}[
+    Path = /usr/share/fonts/truetype/ibm-plex/,
+    Extension = .ttf,
+    UprightFont = IBMPlexSans-Regular,
+    BoldFont = IBMPlexSans-Bold,
+    ItalicFont = IBMPlexSans-Italic,
+    BoldItalicFont = IBMPlexSans-BoldItalic
+]
+\newfontfamily\headfont{SpaceGrotesk}[
+    Path = /usr/share/fonts/truetype/space-grotesk/,
+    Extension = .ttf,
+    UprightFont = SpaceGrotesk-Regular,
+    BoldFont = SpaceGrotesk-Bold
+]
+\newfontfamily\medfont{SpaceGrotesk}[
+    Path = /usr/share/fonts/truetype/space-grotesk/,
+    Extension = .ttf,
+    UprightFont = SpaceGrotesk-Medium
+]
+\newfontfamily\plexmono{IBMPlexMono}[
+    Path = /usr/share/fonts/truetype/ibm-plex/,
+    Extension = .ttf,
+    UprightFont = IBMPlexMono-Regular,
+    BoldFont = IBMPlexMono-Bold,
+    ItalicFont = IBMPlexMono-Italic
+]
+
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{multicol}
+\setlength{\multicolsep}{2pt}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+
+% ---- Warp Records-inspired palette ----
+% flat, saturated sleeve colours + ink black, kept restrained for a professional CV
+\definecolor{inkblack}{RGB}{17,17,20}
+\definecolor{paperwhite}{RGB}{255,255,255}
+\definecolor{muted}{RGB}{110,113,120}
+\definecolor{warpviolet}{RGB}{88,51,227}   % catalogue sleeve purple
+\definecolor{warpteal}{RGB}{0,150,130}     % catalogue sleeve teal
+\definecolor{warpcoral}{RGB}{255,107,90}   % catalogue sleeve coral
+\definecolor{warpyellow}{RGB}{247,199,48}  % catalogue sleeve yellow
+\definecolor{hairline}{RGB}{150,150,158}
+
+\color{inkblack}
+\linespread{0.95}\selectfont
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=warpviolet,
+    urlcolor=warpviolet
+}
+
+\setlist[itemize]{
+    noitemsep,
+    topsep=0pt,
+    parsep=0pt,
+    partopsep=0pt,
+    leftmargin=10pt
+}
+\renewcommand{\labelitemi}{\textcolor{warpviolet}{\scriptsize$\blacktriangleright$}}
+\usepackage{amssymb}
+
+% ---- section "sleeve label" style ----
+% mimics the bold flat colour tag / catalogue-number stickers from the reference sleeves
+\newcounter{secidx}
+\setcounter{secidx}{0}
+\newcommand{\sleevecolor}{warpviolet}
+
+\titleformat{\section}
+    {\stepcounter{secidx}\headfont\bfseries}
+    {}
+    {0pt}
+    {\sectiontag}
+
+\newcommand{\sectiontag}[1]{%
+    \noindent
+    \raisebox{0pt}[15pt][4pt]{%
+        \colorbox{inkblack}{\raisebox{0pt}[10pt][3pt]{\hspace{2pt}\textcolor{paperwhite}{\headfont\bfseries\small \ifnum\value{secidx}<10 0\fi\thesecidx\ \ \MakeUppercase{#1}}\hspace{2pt}}}%
+        \colorbox{warpviolet}{\raisebox{0pt}[10pt][3pt]{\hspace{3pt}}}%
+    }%
+    \hspace{5pt}\textcolor{hairline}{\leaders\hrule height 0.6pt\hfill\kern0pt}\par
+}
+
+\titlespacing*{\section}{0pt}{5pt}{1pt}
+
+\newcommand{\role}[2]{\noindent{\headfont\bfseries #1}\hfill{\plexmono\footnotesize\color{muted}#2}}
+\newcommand{\org}[2]{{\small\itshape #1}\hfill{\small\itshape\color{muted}#2}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% ---------------- HEADER : sleeve front ----------------
+\noindent
+\begin{tikzpicture}[remember picture]
+    \useasboundingbox (0,0) rectangle (\linewidth,0.82in);
+    \fill[warpviolet] (-0.3in,0.0in) rectangle (\linewidth+0.3in,0.84in);
+    \node[anchor=north, text=paperwhite, font=\headfont\bfseries\fontsize{22}{25}\selectfont]
+        at (0.5\linewidth,0.78in) {Juan David Robles Fajardo};
+    \node[anchor=north, text=paperwhite, font=\plexmono\small, align=center]
+        at (0.5\linewidth,0.46in) {BOGOTÁ, COLOMBIA \ \textbullet\ UNIVERSIDAD NACIONAL DE COLOMBIA};
+    \begingroup
+    \hypersetup{urlcolor=paperwhite}
+    \node[anchor=north, text=paperwhite, font=\plexmono\small]
+        at (0.5\linewidth,0.29in) {%
+            \href{mailto:juroblesf@unal.edu.co}{\underline{JUROBLESF@UNAL.EDU.CO}}
+            \ \textbullet\
+            \href{https://github.com/jurobelsf}{\underline{GITHUB: JUROBELSF}}
+            \ \textbullet\
+            \href{https://www.linkedin.com/in/juan-david-robles-fajardo-91b74a245/}{\underline{LINKEDIN}}
+        };
+    \endgroup
+    \node[anchor=north east, text=paperwhite!85!warpviolet, font=\plexmono\scriptsize]
+        at (\linewidth,0.16in) {CV-2026};
+\end{tikzpicture}
+
+\vspace{3pt}
+
+\section{Professional Summary}
+
+Statistics undergraduate at \textit{Universidad Nacional de Colombia}. Strong proficiency in Python, C++, and statistical modeling. Diverse experience in research-oriented projects including machine learning and Music Information Retrieval (MIR). Experience building predictive models and end-to-end data pipelines, from data collection and preprocessing to modeling and visualization. Fast self-learner with strong analytical and problem-solving skills.
+
+\vspace{1pt}
+
+\section{Work Experience}
+
+\role{Private Mathematics Tutor}{NOVEMBER 2024 -- PRESENT}\\
+\org{Universidad Nacional de Colombia}{Bogotá, Colombia}
+\begin{itemize}
+    \item Provide one-on-one tutoring to undergraduate students in mathematics and statistics.
+    \item Teach mathematical foundations, number systems, linear algebra, and statistical inference.
+\end{itemize}
+
+\vspace{1pt}
+
+\role{Python Instructor}{DECEMBER 2025 -- FEBRUARY 2026}\\
+\org{Kodland}{Remote}
+\begin{itemize}
+    \item Taught introductory Python programming courses for children.
+    \item Designed programming activities focused on computational thinking.
+\end{itemize}
+
+\vspace{1pt}
+
+\role{Mathematics Tutor}{JUNE 2025 -- DECEMBER 2025}\\
+\org{Independent}{Bogotá, Colombia}
+\begin{itemize}
+    \item Taught mathematics to high school students.
+\end{itemize}
+
+\vspace{2pt}
+
+\section{Education}
+
+\role{B.S. in Statistics (Ongoing)}{JULY 2023 -- NOVEMBER 2027}\\
+\org{Universidad Nacional de Colombia}{Bogotá, Colombia}
+\begin{itemize}
+    \item Relevant coursework: Statistical Sampling, Regression Analysis, Statistical Inference, Matrix Algebra.
+\end{itemize}
+
+\vspace{2pt}
+
+\section{Featured Projects}
+
+\noindent{\headfont\bfseries Phasing Generator}\hfill{\plexmono\small\color{warpviolet}\href{https://github.com/jurobelsf/phasing-generator}{GITHUB \textrightarrow}}\\
+{\small Developed a stochastic algorithm generating Piano Phase-style musical sequences inspired by Steve Reich, using a custom heuristic scoring function based on psychoacoustic and music-theoretical principles. Used Monte Carlo simulation to explore score distributions and convergence behavior.}
+
+\vspace{1pt}
+
+\noindent{\headfont\bfseries Sound Identity (ongoing)}\hfill{\plexmono\small\color{warpviolet}\href{https://github.com/jurobelsf/sound-identity}{GITHUB \textrightarrow}}\\
+{\small Research project on automatic music classification and sound identity analysis using Machine Learning and Music Information Retrieval (MIR). Built a pipeline including web scraping, audio preprocessing, feature extraction, statistical filtering, and Random Forest classification.}
+
+\vspace{2pt}
+
+\section{Awards}
+
+\role{Expresa3 Competition}{3RD PLACE OVERALL}\\
+{\small\itshape Universidad Nacional de Colombia}
+\begin{itemize}
+    \item Developed a spatial predictive model in R to identify urban crime patterns.
+\end{itemize}
+
+\vspace{2pt}
+
+\section{System Specs \& Skills}
+
+\begin{multicols}{2}
+
+\noindent{\plexmono\bfseries\small\color{warpviolet}[ TECH STACK ]}
+\begin{itemize}
+    \item \textbf{Languages:} Python, R, C++
+    \item \textbf{Data Science:} Pandas, NumPy, Scikit-learn, SciPy
+    \item \textbf{Databases:} SQL
+    \item \textbf{Visualization:} Matplotlib, GeoDa
+    \item \textbf{Tools:} Git, GitHub, Jupyter Notebook, Google Colab, LaTeX, Microsoft Excel
+\end{itemize}
+
+\columnbreak
+
+\noindent{\plexmono\bfseries\small\color{warpviolet}[ COURSES ]}
+\begin{itemize}
+    \item \textbf{MIR \& Audio:} Music Computation and Complexity (Santa Fe Institute), Sound Design (MIT), Live Electronics Performance Practices (MIT)
+    \item \textbf{Statistics \& Data Science:} Advanced Excel (UNAL), Writing Efficient R Code (DataCamp), Reshaping Data with tidyr (DataCamp)
+\end{itemize}
+
+\end{multicols}
+
+\vspace{2pt}
+
+\section{Languages}
+
+\noindent{\plexmono\bfseries\small\color{warpviolet}[ SPANISH ]}\ Native
+\hspace{14pt}
+{\plexmono\bfseries\small\color{warpviolet}[ ENGLISH ]}\ Fluent
+
+\end{document}
