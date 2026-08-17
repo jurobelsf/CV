@@ -24,4 +24,4 @@ Install these fonts locally, then compile with:
 xelatex cv.tex
 ```
 
-> Note: Overleaf's default compiler is pdfLaTeX. If using Overleaf, change the compiler to **XeLaTeX** in the project settings (Menu → Compiler), and make sure the fonts above are available (either installed on Overleaf's TeX Live distribution or uploaded to the project).
+> Note: Overleaf's default compiler is pdfLaTeX. If using Overleaf, change the compiler to **XeLaTeX** in the project settings (Menu → Compiler), and make sure the fonts above are available (either installed on Overleaf's TeX Live distribution or uploaded to the project). 
