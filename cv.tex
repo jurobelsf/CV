@@ -41,6 +41,7 @@
 \setlength{\multicolsep}{2pt}
 \usepackage{tikz}
 \usetikzlibrary{shadows}
+\usepackage{fontawesome5}
 
 % ---- Warp Records-inspired palette ----
 % flat, saturated sleeve colours + ink black, kept restrained for a professional CV
@@ -115,11 +116,17 @@
     \hypersetup{urlcolor=paperwhite}
     \node[anchor=north, text=paperwhite, font=\plexmono\small]
         at (0.5\linewidth,0.29in) {%
-            \href{mailto:juroblesf@unal.edu.co}{\underline{JUROBLESF@UNAL.EDU.CO}}
-            \ \textbullet\
-            \href{https://github.com/jurobelsf}{\underline{GITHUB: JUROBELSF}}
-            \ \textbullet\
-            \href{https://www.linkedin.com/in/juan-david-robles-fajardo-91b74a245/}{\underline{LINKEDIN}}
+            \href{mailto:juroblesf@unal.edu.co}{%
+                {\fontsize{13}{13}\selectfont\faEnvelope}%
+            }
+            \hspace{1.1em}
+            \href{https://github.com/jurobelsf}{%
+                {\fontsize{13}{13}\selectfont\faGithub}%
+            }
+            \hspace{1.1em}
+            \href{https://www.linkedin.com/in/juan-david-robles-fajardo-91b74a245/}{%
+                {\fontsize{13}{13}\selectfont\faLinkedin}%
+            }
         };
     \endgroup
     \node[anchor=north east, text=paperwhite!85!warpviolet, font=\plexmono\scriptsize]
@@ -130,9 +137,21 @@
 
 \section{Professional Summary}
 
-Statistics undergraduate at \textit{Universidad Nacional de Colombia}. Strong proficiency in Python, C++, and statistical modeling. Diverse experience in research-oriented projects including machine learning and Music Information Retrieval (MIR). Experience building predictive models and end-to-end data pipelines, from data collection and preprocessing to modeling and visualization. Fast self-learner with strong analytical and problem-solving skills.
+Statistics undergraduate at \textit{Universidad Nacional de Colombia}. Strong proficiency in Python, C++ and statistical modeling. Diverse experience in research-oriented projects including machine learning and Music Information Retrieval (MIR). Experience building predictive models and end-to-end data pipelines, from data collection and preprocessing to modeling and visualization. Fast self-learner with strong analytical and problem-solving skills.
 
 \vspace{1pt}
+
+\section{Featured Projects}
+
+\noindent{\headfont\bfseries Phasing Generator}\hfill{\plexmono\small\color{warpviolet}\href{https://github.com/jurobelsf/phasing-generator}{GITHUB \textrightarrow}}\\
+{\small Developed a stochastic algorithm generating Piano Phase-style musical sequences inspired by Steve Reich, using a custom heuristic scoring function based on psychoacoustic and music-theoretical principles. Used Monte Carlo simulation to explore score distributions and convergence behavior.}
+
+\vspace{1pt}
+
+\noindent{\headfont\bfseries Sound Identity (ongoing)}\hfill{\plexmono\small\color{warpviolet}\href{https://github.com/jurobelsf/sound-identity}{GITHUB \textrightarrow}}\\
+{\small Research project on automatic music classification and sound identity analysis using Machine Learning and Music Information Retrieval (MIR). Built a pipeline including web scraping, audio preprocessing, feature extraction, statistical filtering, and Random Forest classification.}
+
+\vspace{2pt}
 
 \section{Work Experience}
 
@@ -169,18 +188,6 @@ Statistics undergraduate at \textit{Universidad Nacional de Colombia}. Strong pr
 \begin{itemize}
     \item Relevant coursework: Statistical Sampling, Regression Analysis, Statistical Inference, Matrix Algebra.
 \end{itemize}
-
-\vspace{2pt}
-
-\section{Featured Projects}
-
-\noindent{\headfont\bfseries Phasing Generator}\hfill{\plexmono\small\color{warpviolet}\href{https://github.com/jurobelsf/phasing-generator}{GITHUB \textrightarrow}}\\
-{\small Developed a stochastic algorithm generating Piano Phase-style musical sequences inspired by Steve Reich, using a custom heuristic scoring function based on psychoacoustic and music-theoretical principles. Used Monte Carlo simulation to explore score distributions and convergence behavior.}
-
-\vspace{1pt}
-
-\noindent{\headfont\bfseries Sound Identity (ongoing)}\hfill{\plexmono\small\color{warpviolet}\href{https://github.com/jurobelsf/sound-identity}{GITHUB \textrightarrow}}\\
-{\small Research project on automatic music classification and sound identity analysis using Machine Learning and Music Information Retrieval (MIR). Built a pipeline including web scraping, audio preprocessing, feature extraction, statistical filtering, and Random Forest classification.}
 
 \vspace{2pt}
 
